@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gems Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @font-face {
+            font-family: 'cocogoose';
+            src: url('./assets/font/Cocogoose Pro Light Trial.ttf');
+        }
+
+        @font-face {
+            font-family: 'gilroy-bold';
+            src: url('./assets/font/Gilroy-Bold.ttf');
+        }
+
+        @font-face {
+            font-family: 'gilroy-medium';
+            src: url('./assets/font/Gilroy-Medium.ttf');
+        }
+        @font-face {
+            font-family: 'gilroy-light';
+            src: url('./assets/font/Gilroy-Light.ttf');
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <section id="banner" class="fixed bg-[#003556] py-[15px] w-full z-50">
+        <div class="container mx-auto px-4 relative">
+            <div class="flex flex-wrap items-center justify-center">
+                <div class="flex items-center flex-col md:flex-row gap-x-4">
+                    <p class="text-white font-semibold font-[gilroy-bold]">Admissions Open For 2025 - 26</p>
+                    <button type="button" data-modal-target="default-modal" data-modal-toggle="default-modal"  class="bg-[#0877BE] px-8 py-1 text-white rounded-md">Enrol Now!</button>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <img src="assets/close-circle.webp" alt="Close" id="closeBanner" class="absolute right-0 top-0 w-6 h-6 cursor-pointer ml-auto mt-1" />
+            </div>
+        </div>
+    </section>
+    
+    
+
+    
+        
+
+    <section class="relative py-20">
+        <!-- Banner Image -->
+        <img src="assets/banner.webp" alt="Banner" class="w-full h-full object-cover absolute inset-0 z-0 hidden md:flex">
+        <img src="assets/mob-banner.webp" alt="Banner" class="w-full h-[800px] object-cover absolute inset-0 z-0 flex md:hidden">
+    
+        <!-- Content Over Image -->
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row justify-between gap-8">
+                <!-- Logo on the left -->
+                <img src="assets/logo.webp" alt="Logo" class="h-16 w-auto mx-auto lg:mx-0 mb-6 lg:mb-0 hidden md:flex" />
+    
+                <!-- Form on the right -->
+                <div class="w-full max-w-lg ml-auto bg-[#FFFCF1] p-6 rounded-lg shadow-lg mt-52 md:mt-0">
+                    <div class="flex items-center justify-center p-4 pb-0 rounded-t">
+                        <h3 class="text-2xl text-center font-semibold text-[#003556] font-[Oswald]">
+                            Step Into Success — Let’s Begin!
+                        </h3>
+                    </div>
+                    <div class="space-y-4">
+                        <form id="enquiryForm" class="space-y-6">
+                            <!-- Name -->
+                            <div class="relative z-0 w-full mb-5 group">
+                                <input type="text" name="name" id="name" required
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-500 peer"
+                                    placeholder="" />
+                                <label for="name"
+                                    class="absolute text-sm text-[#212121] font-[Poppins] duration-300 transform -translate-y-4 scale-80 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-80 peer-focus:-translate-y-4">
+                                    Name
+                                </label>
+                            </div>
+    
+                            <!-- Phone -->
+                            <div class="relative z-0 w-full mb-5 group">
+                                <input type="tel" name="phone" id="phone" required pattern="[0-9]{10}" maxlength="10"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-500 peer"
+                                    placeholder="" />
+                                <label for="phone"
+                                    class="absolute text-sm text-[#212121] font-[Poppins] duration-300 transform -translate-y-4 scale-80 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-80 peer-focus:-translate-y-4">
+                                    Phone Number
+                                </label>
+                            </div>
+    
+                            <!-- Email -->
+                            <div class="relative z-0 w-full mb-5 group">
+                                <input type="email" name="email" id="email" required
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-500 peer"
+                                    placeholder="" />
+                                <label for="email"
+                                    class="absolute text-sm text-[#212121] font-[Poppins] duration-300 transform -translate-y-4 scale-80 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-80 peer-focus:-translate-y-4">
+                                    Email
+                                </label>
+                            </div>
+    
+                            <!-- Select Class -->
+                            <div>
+                                <select id="class" name="class" required
+                                    class="mt-1 block w-full px-0 py-2 border-0 border-b border-gray-300 bg-transparent focus:border-blue-500 focus:ring-0">
+                                    <option value="" class="text-sm text-[#212121] font-[Poppins]" selected disabled>-- Select Class
+                                        --</option>
+                                    <option value="Nursery">Nursery</option>
+                                    <option value="KG">KG</option>
+                                    <option value="1st">1st</option>
+                                    <option value="2nd">2nd</option>
+                                    <option value="3rd">3rd</option>
+                                </select>
+                            </div>
+    
+                            <!-- Select Board -->
+                            <div>
+                                <select id="board" name="board" required
+                                    class="mt-1 block w-full px-0 py-2 border-0 border-b border-gray-300 bg-transparent focus:border-blue-500 focus:ring-0">
+                                    <option value="" class="text-sm text-[#212121] font-[Poppins]" selected disabled>-- Select Board
+                                        --</option>
+                                    <option value="CBSE">CBSE</option>
+                                    <option value="ICSE">ICSE</option>
+                                    <option value="State">State Board</option>
+                                </select>
+                            </div>
+    
+                            <!-- Submit Button -->
+                            <div class="flex justify-center">
+                                <button type="submit"
+                                    class="w-48 bg-[#0877BE] hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-md">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+      <section class="py-10 md:pt-8 lg:pt-16 bg-[#FFF]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-y-8">
+                <div class="w-[50%] md:w-[25%] flex flex-wrap md:flex-col lg:flex-row justify-center items-center gap-4 border border-0 border-dashed border-r-2">
+                    <img src="assets/school.webp" alt="" class="lg:w-28 md:w-20 w-20 h-auto">
+                    <p class="font-[cocogoose] text-[#131313]">Large<br> Campus</p>
+                </div>
+                <div class="w-[50%] md:w-[25%] flex flex-wrap md:flex-col lg:flex-row justify-center items-center gap-4 border border-0 border-dashed md:border-r-2">
+                    <img src="assets/resume-and-cv.webp" alt="" class="lg:w-28 md:w-20 w-20 h-auto">
+                    <p class="font-[cocogoose] text-[#131313]">CISCE and<br> CAIE curriculum</p>
+                </div>
+                <div class="w-[50%] md:w-[25%] flex flex-wrap md:flex-col lg:flex-row justify-center items-center gap-4 border border-0 border-dashed border-r-2">
+                    <img src="assets/teacher.webp" alt="" class="lg:w-28 md:w-20 w-20 h-auto">
+                    <p class="text-[#131313] font-[Poppins]">70+<br><span class="font-[cocogoose] text-[#131313]"> teachers</span></p>
+                </div> 
+                <div class="w-[50%] md:w-[25%] flex flex-wrap md:flex-col lg:flex-row justify-center items-center gap-4">
+                    <img src="assets/team.webp" alt="" class="lg:w-28 md:w-20 w-20 h-auto">
+                    <p class="font-[Poppins] text-[#131313]">30+ coaching<br><span class="font-[cocogoose] text-[#131313]"> for boarding</span></p>
+                </div>
+            </div>
+        </div>
+      </section>
+      
+
+      <section class="py-10 bg-[#FFF]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between items-center gap-y-4">
+                <div class="w-full md:w-[55%] text-center md:text-left">
+                    <div class="flex flex-wrap items-center gap-x-6 mb-5 text-center md:text-left gap-y-2">
+                        <h2 class="font-[Amaranth] text-[#10538A] text-3xl">About Gems Akademia International School</h2>
+                        <img src="assets/Arrow.webp" alt="" class="h-2 w-48">
+                    </div>
+                    <p class="font-[gilroy-light] text-black pb-4">
+                        Welcome to the vibrant community of Gems Akademia International School (GAIS),in Kolkata. Established to make children well-rounded and self-dependent individuals, the school has been constructed on a sprawling 20 acre campus with splendid infrastructural facilities in a tranquil and pollution free environment.
+                    </p>
+                    <p class="font-[gilroy-light] text-black">
+                        Every day our teachers and staff strive to help students aged between 2+ & 18, from all backgrounds, cultures and educational levels to learn, thrive and grow. The entire gamut of activities in GAIS reflects its objective of nurturing young children and making them responsible adults who can make a positive contribution to the world.
+                    </p>
+                </div>
+                <div class="w-full md:w-[40%] lg:w-[30%]">
+                    <img src="assets/CurriculumInformation-banner.webp" alt="" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="bg-[#F4F4F4] py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-5">
+                <h2 class="font-[Amaranth] text-[#10538A] text-3xl">Our Learning Curriculum</h2>
+                <img src="assets/Arrow.webp" alt="" class="h-2 w-48">
+            </div>
+            <div class="flex flex-wrap justify-between gap-1 gap-y-8">
+                <div class="w-full md:w-[32%]">
+                    <div class="text-center md:text-left">
+                        <img src="assets/pre–primary-school.webp" alt="" class="mb-3">
+                        <h3 class="text-[#10538A] font-[gilroy-bold] text-[18px]">Pre – Primary School</h3>
+                        <p class="font-[gilroy-medium] text-black text-[13px] mb-2">(Nursery to K.G. II)</p>
+                        <p class="font-[gilroy-light text-black text-[15px] mb-3">Welcome to the vibrant community of Gems Akademia International School (GAIS),in Kolkata.</p>
+                        <button type="button" data-modal-target="default-modal" data-modal-toggle="default-modal"  class="bg-[#0877BE] px-8 py-1 text-white rounded-md">Enrol Now!</button>
+                    </div>
+                </div>
+                <div class="w-full md:w-[32%]">
+                    <div class="text-center md:text-left">
+                        <img src="assets/middle-school.webp" alt="" class="mb-3">
+                        <h3 class="text-[#10538A] font-[gilroy-bold] text-[18px]">Middle School</h3>
+                        <p class="font-[gilroy-medium] text-black text-[13px] mb-2">Grades 6 to 8</p>
+                        <p class="font-[gilroy-light text-black text-[15px] mb-3">Welcome to the vibrant community of Gems Akademia International School (GAIS),in Kolkata.</p>
+                        <button type="button" data-modal-target="default-modal" data-modal-toggle="default-modal"  class="bg-[#0877BE] px-8 py-1 text-white rounded-md">Enrol Now!</button>
+                    </div>
+                </div>
+                <div class="w-full md:w-[32%]">
+                    <div class="text-center md:text-left">
+                        <img src="assets/secondary-school.webp" alt="" class="mb-3">
+                        <h3 class="text-[#10538A] font-[gilroy-bold] text-[18px]">Secondary School</h3>
+                        <p class="font-[gilroy-medium] text-black text-[13px] mb-2">Grades 9 to 10</p>
+                        <p class="font-[gilroy-light text-black text-[15px] mb-3">Welcome to the vibrant community of Gems Akademia International School (GAIS),in Kolkata.</p>
+                        <button type="button" data-modal-target="default-modal" data-modal-toggle="default-modal"  class="bg-[#0877BE] px-8 py-1 text-white rounded-md">Enrol Now!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="bg-[#FFF] py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center text-center md:text-left gap-x-6 gap-y-2 mb-8">
+                <h2 class="font-[Amaranth] text-[#10538A] text-3xl">Our Associations & Accreditation</h2>
+                <img src="assets/Arrow.webp" alt="" class="h-2 w-48">
+            </div>
+            <div class="flex items-center">
+                <section class="splide" id="associations" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                          <ul class="splide__list">
+                              <li class="splide__slide flex items-center justify-center border border-0 lg:border-r-2 border-dashed">
+                                <img src="assets/cftisce.webp" alt="">
+                              </li>
+                              <li class="splide__slide flex items-center justify-center border border-0 lg:border-r-2 border-dashed">
+                                <img src="assets/caie.webp" alt="">
+                              </li>
+                              <li class="splide__slide flex items-center justify-center border border-0 lg:border-r-2 border-dashed">
+                                <img src="assets/et.webp" alt="">
+                              </li>
+                              <li class="splide__slide flex items-center justify-center border border-0 lg:border-r-2 border-dashed">
+                                <img src="assets/ttbime.webp" alt="">
+                              </li>
+                              <li class="splide__slide flex items-center justify-center">
+                                <img src="assets/fi.webp" alt="">
+                              </li>
+                          </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+      </section>
+
+      <section class="bg-[#FFF] py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-x-6 mb-8">
+                <h2 class="font-[Amaranth] text-[#10538A] text-3xl">Our Facilities</h2>
+                <img src="assets/Arrow.webp" alt="" class="h-2 w-48">
+            </div>
+            <div class="flex flex-wrap justify-between gap-y-8">
+                <div class="group w-full md:w-[22%] relative overflow-hidden">
+                    <img src="assets/classrooms.webp" alt="" class="w-full h-auto">
+                  
+                    <!-- Overlay Container -->
+                    <div class="absolute inset-0 flex flex-col text-center justify-end px-4 py-8">
+                      <div class="transition-all duration-500 ease-in-out group-hover:-translate-y-4">
+                        <h2 class="text-white font-[gilroy-bold] text-[18px]">
+                          Classrooms
+                        </h2>
+                        <p class="text-white font-[gilroy-light] text-[13px] max-h-0 opacity-0 transition-[max-height,opacity] duration-700 ease-in-out group-hover:max-h-40 group-hover:opacity-100 overflow-hidden">
+                          Welcome to the vibrant community of Gems Akademia International School (GAIS), in Kolkata.
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                                    
+                <div class="group w-full md:w-[22%] relative overflow-hidden">
+                    <img src="assets/extra-curricular-facilities.webp" alt="" class="w-full h-auto">
+                    <!-- Overlay Container -->
+                    <div class="absolute inset-0 flex flex-col text-center justify-end px-4 py-8">
+                      <div class="transition-all duration-500 ease-in-out group-hover:-translate-y-4">
+                        <h2 class="text-white font-[gilroy-bold] text-[18px]">
+                           Extra-curricular Facilities
+                        </h2>
+                        <p class="text-white font-[gilroy-light] text-[13px] max-h-0 opacity-0 transition-[max-height,opacity] duration-700 ease-in-out group-hover:max-h-40 group-hover:opacity-100 overflow-hidden">
+                          Welcome to the vibrant community of Gems Akademia International School (GAIS), in Kolkata.
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                  
+                <div class="group w-full md:w-[22%] relative overflow-hidden">
+                    <img src="assets/boarding-facilities.webp" alt="" class="w-full h-auto">
+                    <!-- Overlay Container -->
+                    <div class="absolute inset-0 flex flex-col text-center justify-end px-4 py-8">
+                      <div class="transition-all duration-500 ease-in-out group-hover:-translate-y-4">
+                        <h2 class="text-white font-[gilroy-bold] text-[18px]">
+                           Boarding Facilities
+                        </h2>
+                        <p class="text-white font-[gilroy-light] text-[13px] max-h-0 opacity-0 transition-[max-height,opacity] duration-700 ease-in-out group-hover:max-h-40 group-hover:opacity-100 overflow-hidden">
+                          Welcome to the vibrant community of Gems Akademia International School (GAIS), in Kolkata.
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                  
+                <div class="group w-full md:w-[22%] relative overflow-hidden">
+                    <img src="assets/care-security.webp" alt="" class="w-full h-auto">
+                    <!-- Overlay Container -->
+                    <div class="absolute inset-0 flex flex-col text-center justify-end px-4 py-8">
+                      <div class="transition-all duration-500 ease-in-out group-hover:-translate-y-4">
+                        <h2 class="text-white font-[gilroy-bold] text-[18px]">
+                          Care & Security
+                        </h2>
+                        <p class="text-white font-[gilroy-light] text-[13px] max-h-0 opacity-0 transition-[max-height,opacity] duration-700 ease-in-out group-hover:max-h-40 group-hover:opacity-100 overflow-hidden">
+                          Welcome to the vibrant community of Gems Akademia International School (GAIS), in Kolkata.
+                        </p>
+                      </div>
+                    </div>
+                </div>                                                    
+            </div>
+        </div>
+      </section>
+
+
+      <section class="bg-[#FFF] py-10 relative">
+        <div class="container mx-auto px-4 relative">
+          
+          <img src="assets/edunext-bg.webp" alt="" class="absolute inset-0 w-full h-full lg:object-fill object-cover z-0" />
+      
+          
+          <div class="flex flex-wrap items-center justify-between lg:min-h-[550px] relative z-10">
+      
+            
+            <div class="w-full md:w-[50%] text-white py-8 px-4 lg:pl-64">
+              <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-6 mb-4">
+                <h2 class="font-[Amaranth] text-[45px] text-white">Edunext App</h2>
+                <img src="assets/Arrow2.webp" alt="" class="h-2 w-48">
+              </div>
+              <p class="mb-4 font-[gilroy-light]">Teacher parent connectivity through Edunext app</p>
+              <div class="w-[300px] h-[1px] bg-white mb-4"></div>
+              <h2 class="mb-4 text-[30px] font-[Amaranth]">Download Our App</h2>
+              <div class="flex flex-wrap justify-center md:justify-start lg:justify-center items-center gap-4">
+                <img src="assets/app-store.webp" alt="" class="h-16 w-auto">
+                <img src="assets/gplay.webp" alt="" class="h-16">
+              </div>
+            </div>
+            
+            <div class="w-full md:w-[50%] flex flex-col justify-end items-center relative">
+              <img src="assets/phone.webp" alt="" class="lg:max-w-[500px]">
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="py-10 bg-[#FFF]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="w-full md:w-[30%]">
+                    <div class="flex flex-wrap text-center md:text-left items-center gap-x-6 mb-5">
+                        <h2 class="font-[Amaranth] text-[#10538A] text-3xl">Our Academic Team</h2>
+                        <img src="assets/Arrow.webp" alt="" class="h-2 w-32">
+                    </div>
+                    <p class="font-[gilroy-light] text-black pb-4 text-center md:text-left">
+                        All our teachers participate in ongoing training programmes to ensure that the strategies, methods and resources they use reflect the standards of best practice from around the world.
+                    </p>
+                    <p class="font-[gilroy-light] text-black text-center md:text-left">
+                        The Entire GAIS staff has access to professional opportunities that include international placement, training and professional development programmes.
+                    </p>
+                </div>
+                <div class="w-full md:w-[68%]">
+                    <img src="assets/academic.webp" alt="">
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+    <section class="py-10 relative hidden md:flex">
+        <div class="px-4 md:px-8 relative">
+            <div class="relative z-0">
+                <img src="assets/boarding.webp" alt="" class="w-full rounded-lg shadow-md">
+            </div>
+            <div class="absolute left-[10%] -bottom-20 lg:-bottom-20 md:-bottom-52 bg-[#0877BE] rounded-[35px] flex flex-col items-center justify-center w-[90%] md:w-[80%] px-6 lg:py-8 py-8 md:py-4 md:space-y-4 lg:space-y-6 shadow-lg z-10">
+            <div class="text-center">
+                <h2 class="font-[Amaranth] text-white text-3xl mb-2">Our Boarding Team</h2>
+                <img src="assets/Arrow2.webp" alt="" class="h-2 w-32 mx-auto">
+            </div>
+            <div class="max-w-6xl space-y-4">
+                <p class="text-white text-center font-[gilroy-light]">
+                All our teachers participate in ongoing training programmes to ensure that the strategies, methods and resources they use reflect the standards of best practice from around the world.
+                </p>
+                <p class="text-white text-center font-[gilroy-light]">
+                The Entire GAIS staff has access to professional opportunities that include international placement, training and professional development programmes.
+                </p>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 relative flex md:hidden">
+        <div class="relative">
+            
+            <div class="relative bg-[#0877BE] flex flex-col items-center justify-center w-full px-6 py-8 pb-20 space-y-2 shadow-lg z-0">
+            <div class="text-center">
+                <h2 class="font-[Amaranth] text-white text-3xl mb-2">Our Boarding Team</h2>
+                <img src="assets/Arrow2.webp" alt="" class="h-2 w-32 mx-auto">
+            </div>
+            <div class="max-w-6xl space-y-4">
+                <p class="text-white text-center font-[gilroy-light]">
+                All our teachers participate in ongoing training programmes to ensure that the strategies, methods and resources they use reflect the standards of best practice from around the world.
+                </p>
+                <p class="text-white text-center font-[gilroy-light]">
+                The Entire GAIS staff has access to professional opportunities that include international placement, training and professional development programmes.
+                </p>
+            </div>
+            </div>
+            <div class="absolute left-[0%] -bottom-20 z-10 w-full flex justify-center items-center">
+                <img src="assets/boarding.webp" alt="" class="w-[90%] rounded-lg shadow-md">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-[#FFF] py-20 md:pt-52 lg:pt-20">
+        <div class="container px-4 mx-auto">
+            <div class="text-center mb-8">
+                <div class="flex flex-wrap justify-center items-center gap-x-6">
+                    <h2 class="font-[Amaranth] text-[#10538A] text-3xl">Testimonials</h2>
+                    <img src="assets/Arrow.webp" alt="" class="h-2 w-48">
+                </div>
+                <p class="font-[gilroy-light] text-black">What Parents, Students & Teachers say about us!</p>
+            </div>
+
+            <section class="splide" id="testi" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                      <ul class="splide__list">
+                          <li class="splide__slide">
+                            <div class="flex flex-col">
+                                <div class="w-full h-[220px]">
+                                    <iframe width="100%" height="100%" class="rounded-br-[100px]" poster="assets/poster.webp" src="https://www.youtube.com/embed/IWn6_RBwdhQ" title="Parent Talk 13" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="bg-[#0877BE] p-8 rounded-tr-[100px]">
+                                    <div class="flex flex-wrap items-center gap-x-4 mb-3">
+                                        <h2 class="font-[Amaranth] text-[#FFF] text-2xl">Parent Talk</h2>
+                                        <img src="assets/Arrow3.webp" alt="" class="h-2 w-auto">
+                                    </div>
+                                    <p class="text-white text-left font-[gilroy-light]">
+                                        Parental Perspective: A heartfelt testimonial delving into the formative years of my daughter at school. Witness the nurturing journey that has shaped her into a confident and independent individual.
+                                    </p>
+                                </div>
+                            </div>
+                          </li>
+                          <li class="splide__slide">
+                            <div class="flex flex-col">
+                                <div class="bg-[#0877BE] p-8 rounded-bl-[100px]">
+                                    <div class="flex flex-wrap items-center gap-x-4 mb-3">
+                                        <h2 class="font-[Amaranth] text-[#FFF] text-2xl">Parent Talk</h2>
+                                        <img src="assets/Arrow3.webp" alt="" class="h-2 w-auto">
+                                    </div>
+                                    <p class="text-white text-left font-[gilroy-light]">
+                                        Parental Perspective: A heartfelt testimonial delving into the formative years of my daughter at school. Witness the nurturing journey that has shaped her into a confident and independent individual.
+                                    </p>
+                                </div>
+                                <div class="w-full h-[220px]">
+                                    <iframe width="100%" height="100%" class="rounded-tl-[100px]" poster="assets/poster.webp" src="https://www.youtube.com/embed/IWn6_RBwdhQ" title="Parent Talk 13" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                          </li>
+                          <li class="splide__slide">
+                            <div class="flex flex-col">
+                                <div class="w-full h-[220px]">
+                                    <iframe width="100%" height="100%" class="rounded-br-[100px]" poster="assets/poster.webp" src="https://www.youtube.com/embed/IWn6_RBwdhQ" title="Parent Talk 13" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="bg-[#0877BE] p-8 rounded-tr-[100px]">
+                                    <div class="flex flex-wrap items-center gap-x-4 mb-3">
+                                        <h2 class="font-[Amaranth] text-[#FFF] text-2xl">Parent Talk</h2>
+                                        <img src="assets/Arrow3.webp" alt="" class="h-2 w-auto">
+                                    </div>
+                                    <p class="text-white text-left font-[gilroy-light]">
+                                        Parental Perspective: A heartfelt testimonial delving into the formative years of my daughter at school. Witness the nurturing journey that has shaped her into a confident and independent individual.
+                                    </p>
+                                </div>
+                            </div>
+                          </li>
+                          <li class="splide__slide">
+                            <div class="flex flex-col">
+                                <div class="bg-[#0877BE] p-8 rounded-bl-[100px]">
+                                    <div class="flex flex-wrap items-center gap-x-4 mb-3">
+                                        <h2 class="font-[Amaranth] text-[#FFF] text-2xl">Parent Talk</h2>
+                                        <img src="assets/Arrow3.webp" alt="" class="h-2 w-auto">
+                                    </div>
+                                    <p class="text-white text-left font-[gilroy-light]">
+                                        Parental Perspective: A heartfelt testimonial delving into the formative years of my daughter at school. Witness the nurturing journey that has shaped her into a confident and independent individual.
+                                    </p>
+                                </div>
+                                <div class="w-full h-[220px]">
+                                    <iframe width="100%" height="100%" class="rounded-tl-[100px]" poster="assets/poster.webp" src="https://www.youtube.com/embed/IWn6_RBwdhQ" title="Parent Talk 13" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                          </li>
+                      </ul>
+                </div>
+              </section>
+        </div>
+    </section>
+
+
+
+    <section class="bg-[#F4F4F4] py-10">
+        <div class="container px-4 mx-auto">
+            <div class="text-center mb-8">
+                <div class="flex flex-col md:flex-wrap justify-center text-center md:text-left items-center gap-x-6 gap-y-2">
+                    <h2 class="font-[Amaranth] text-[#10538A] text-3xl">Awards</h2>
+                    <img src="assets/Arrow.webp" alt="" class="h-2 w-32">
+                </div>
+                <!-- <p class="font-[gilroy-light] text-black">What Parents, Students & Teachers say about us!</p> -->
+            </div>
+            <section class="splide" id="awards" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                      <ul class="splide__list">
+                          <li class="splide__slide">
+                            <div class="relative inline-block">
+                                <img src="assets/award.webp" alt="" class="w-full h-auto">
+                              
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+                                  <p class="font-[gilroy-medium]">
+                                    <span class="block text-lg text-[#252525]">Winner of the</span>
+                                    <span class="block text-xl text-[#00388E]">British Council India School Award</span>
+                                  </p>
+                                </div>
+                              </div>                              
+                          </li>
+                          <li class="splide__slide">
+                            <div class="relative inline-block">
+                                <img src="assets/award.webp" alt="" class="w-full h-auto">
+                              
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+                                  <p class="font-[gilroy-medium]">
+                                    <span class="block text-lg text-[#252525]">Winner of the</span>
+                                    <span class="block text-xl text-[#00388E]">British Council India School Award</span>
+                                  </p>
+                                </div>
+                              </div> 
+                          </li>
+                          <li class="splide__slide">
+                            <div class="relative inline-block">
+                                <img src="assets/award.webp" alt="" class="w-full h-auto">
+                              
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+                                  <p class="font-[gilroy-medium]">
+                                    <span class="block text-lg text-[#252525]">Winner of the</span>
+                                    <span class="block text-xl text-[#00388E]">British Council India School Award</span>
+                                  </p>
+                                </div>
+                              </div> 
+                          </li>
+                          <li class="splide__slide">
+                            <div class="relative inline-block">
+                                <img src="assets/award.webp" alt="" class="w-full h-auto">
+                              
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+                                  <p class="font-[gilroy-medium]">
+                                    <span class="block text-lg text-[#252525]">Winner of the</span>
+                                    <span class="block text-xl text-[#00388E]">British Council India School Award</span>
+                                  </p>
+                                </div>
+                              </div> 
+                          </li>
+                          <li class="splide__slide">
+                            <div class="relative inline-block">
+                                <img src="assets/award.webp" alt="" class="w-full h-auto">
+                              
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+                                  <p class="font-[gilroy-medium]">
+                                    <span class="block text-lg text-[#252525]">Winner of the</span>
+                                    <span class="block text-xl text-[#00388E]">British Council India School Award</span>
+                                  </p>
+                                </div>
+                              </div> 
+                          </li>
+                      </ul>
+                </div>
+              </section>
+        </div>
+    </section>
+
+    <section class="bg-[#FFF] py-10">
+        <div class="container px-4 mx-auto">
+            <div class="flex flex-wrap justify-center items-center">
+                <div class="w-full md:w-[60%]">
+                    <div class="flex flex-wrap justify-center items-center text-center md:text-left gap-x-6 gap-y-2 mb-8">
+                        <h2 class="font-[Amaranth] text-[#10538A] text-3xl">Frequently Asked Questions</h2>
+                        <img src="assets/Arrow.webp" alt="" class="h-2 w-48">
+                    </div>
+                    <div class="flex flex-wrap jusitfy-center gap-[2%]">
+
+                        <!-- Accordion Item 1 -->
+                        <div class="md:w-[90%] w-full h-full bg-[#10538A] my-2">
+                            <button onclick="faqAccordion(1)"
+                                class="w-full flex justify-between items-center py-3 text-slate-100 px-5">
+                                <h2 class="text-[15px] md:text-[18px] text-[#FFF] font-[gilroy-light] text-left">1. What makes Gems Akademia International School the best residential school in Kolkata?</h2>
+                                <span id="faqIcon-1" class="text-slate-800 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill="white" d="M1.5 6.5l6 6 6-6" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="faqContent-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="py-5 text-sm text-black font-[gilroy-light] bg-[#F5F5F5] px-5">
+                                    <p>Gems Akademia offers a safe, supportive, and enriching boarding environment with world-class infrastructure. With personalized academic support, extracurricular activities, 24/7 care, and a strong value-based approach, it’s considered one of the</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion Item 2 -->
+                        <div class="md:w-[90%] w-full h-full bg-[#10538A] my-2">
+                            <button onclick="faqAccordion(2)"
+                                class="w-full flex justify-between items-center py-3 text-slate-100 px-5">
+                                <h2 class="text-[15px] md:text-[18px] text-[#FFF] font-[gilroy-light] text-left">2. What makes Gems Akademia International School the best residential school in Kolkata?</h2>
+                                <span id="faqIcon-2" class="text-slate-800 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill="white" d="M1.5 6.5l6 6 6-6" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="faqContent-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="py-5 text-sm text-black font-[gilroy-light] bg-[#F5F5F5] px-5">
+                                    <p>Gems Akademia offers a safe, supportive, and enriching boarding environment with world-class infrastructure. With personalized academic support, extracurricular activities, 24/7 care, and a strong value-based approach, it’s considered one of the</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion Item 3 -->
+                        <div class="md:w-[90%] w-full h-full bg-[#10538A] my-2">
+                            <button onclick="faqAccordion(3)"
+                                class="w-full flex justify-between items-center py-3 text-slate-100 px-5">
+                                <h2 class="text-[15px] md:text-[18px] text-[#FFF] font-[gilroy-light] text-left">3. What makes Gems Akademia International School the best residential school in Kolkata?</h2>
+                                <span id="faqIcon-3" class="text-slate-800 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill="white" d="M1.5 6.5l6 6 6-6" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="faqContent-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="py-5 text-sm text-black font-[gilroy-light] bg-[#F5F5F5] px-5">
+                                    <p>Gems Akademia offers a safe, supportive, and enriching boarding environment with world-class infrastructure. With personalized academic support, extracurricular activities, 24/7 care, and a strong value-based approach, it’s considered one of the</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion Item 4 -->
+                        <div class="md:w-[90%] w-full h-full bg-[#10538A] my-2">
+                            <button onclick="faqAccordion(4)"
+                                class="w-full flex justify-between items-center py-3 text-slate-100 px-5">
+                                <h2 class="text-[15px] md:text-[18px] text-[#FFF] font-[gilroy-light] text-left">4. What makes Gems Akademia International School the best residential school in Kolkata?</h2>
+                                <span id="faqIcon-4" class="text-slate-800 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                        <path fill="white" d="M1.5 6.5l6 6 6-6" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="faqContent-4" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="py-5 text-sm text-black font-[gilroy-light] bg-[#F5F5F5] px-5">
+                                    <p>Gems Akademia offers a safe, supportive, and enriching boarding environment with world-class infrastructure. With personalized academic support, extracurricular activities, 24/7 care, and a strong value-based approach, it’s considered one of the</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-[40%] hidden md:block">
+                    <img src="assets/faq.webp" alt="" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#10538A] py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between items-center gap-y-2">
+                <div class="flex gap-x-4">
+                    <a href="" class="text-white font-[Poppins] font-normal">Privacy Policy</a>
+                    <span class="text-white">|</span>
+                    <a href="" class="text-white font-[Poppins] font-normal">Terms & Conditions</a>
+                </div>
+                <div>
+                    <p class="text-white font-normal text-sm font-[Poppins]">Copyright2024@gemsakademia.in</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      
+      
+      
+      
+    
+    
+      
+
+
+
+
+
+
+
+    
+
+        
+        <!-- Main modal -->
+        <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-[#FFFCF1] rounded-lg shadow-sm">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                        <h3 class="text-xl font-semibold text-[#003556] font-[Oswald]">
+                            Step Into Success — Let’s Begin!
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="default-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4 md:p-5 space-y-4">
+                        <form id="enquiryForm" class="space-y-6">
+                            <!-- Name -->
+                            <div class="relative z-0 w-full mb-5 group">
+                              <input type="text" name="name" id="name" required class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-500 peer"
+                                placeholder="" />
+                              <label for="name"
+                                class="absolute text-sm text-[#212121] font-[Poppins] duration-300 transform -translate-y-4 scale-80 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-80 peer-focus:-translate-y-4">
+                                Name
+                              </label>
+                            </div>
+                          
+                            <!-- Phone -->
+                            <div class="relative z-0 w-full mb-5 group">
+                              <input type="tel" name="phone" id="phone" required pattern="[0-9]{10}" maxlength="10" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-500 peer"
+                                placeholder="" />
+                              <label for="phone"
+                                class="absolute text-sm text-[#212121] font-[Poppins] duration-300 transform -translate-y-4 scale-80 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-80 peer-focus:-translate-y-4">
+                                Phone Number
+                              </label>
+                            </div>
+                          
+                            <!-- Email -->
+                            <div class="relative z-0 w-full mb-5 group">
+                              <input type="email" name="email" id="email" required class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-500 peer"
+                                placeholder="" />
+                              <label for="email"
+                                class="absolute text-sm text-[#212121] font-[Poppins] duration-300 transform -translate-y-4 scale-80 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-80 peer-focus:-translate-y-4">
+                                Email
+                              </label>
+                            </div>
+                          
+                            <!-- Select Class -->
+                            <div>
+                                <select id="class" name="class" required class="mt-1 block w-full px-0 py-2 border-0 border-b border-gray-300 bg-transparent focus:border-blue-500 focus:ring-0">
+                                    <option value="" class="text-sm text-[#212121] font-[Poppins]" selected disabled>-- Select Class --</option>
+                                    <option value="Nursery">Nursery</option>
+                                    <option value="KG">KG</option>
+                                    <option value="1st">1st</option>
+                                    <option value="2nd">2nd</option>
+                                    <option value="3rd">3rd</option>
+                                </select>
+                            </div>
+
+                            <!-- Select Board -->
+                            <div>
+                                <select id="board" name="board" required
+                                    class="mt-1 block w-full px-0 py-2 border-0 border-b border-gray-300 bg-transparent focus:border-blue-500 focus:ring-0">
+                                    <option value="" class="text-sm text-[#212121] font-[Poppins]" selected disabled>-- Select Board --</option>
+                                    <option value="CBSE">CBSE</option>
+                                    <option value="ICSE">ICSE</option>
+                                    <option value="State">State Board</option>
+                                </select>
+                            </div>
+                          
+                            <!-- Submit Button -->
+                            <div class="flex justify-center">
+                              <button type="submit"
+                                class="w-48 bg-[#0877BE] hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-md">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <script>
+            function toggleAccordion(e) {
+                let t = document.querySelectorAll('[id^="content-"]'),
+                    l = document.querySelectorAll('[id^="icon-"]'),
+                    n = document.querySelectorAll('[id^="header-"]'),
+                    o = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white" class="w-4 h-4">
+              <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+            </svg>
+          `,
+                    s = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white" class="w-4 h-4">
+              <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+            </svg>
+          `;
+                t.forEach((t, o) => {
+                    o + 1 !== e &&
+                        ((t.style.maxHeight = "0"),
+                            (l[o].innerHTML = s),
+                            n[o].classList.remove("bg-[#000000]"),
+                            n[o].classList.add("bg-[#000000]"));
+                });
+                let a = document.getElementById(`content-${e}`),
+                    r = document.getElementById(`icon-${e}`),
+                    c = document.getElementById(`header-${e}`);
+                a.style.maxHeight && "0px" !== a.style.maxHeight
+                    ? ((a.style.maxHeight = "0"),
+                        (r.innerHTML = s),
+                        c.classList.remove("bg-[#000000]"),
+                        c.classList.add("bg-[#000000]"))
+                    : ((a.style.maxHeight = a.scrollHeight + "px"),
+                        (r.innerHTML = o),
+                        c.classList.remove("bg-[#000000]"),
+                        c.classList.add("bg-[#000000]"));
+            }
+        </script>
+        <script>
+            function faqAccordion(index) {
+            const contents = document.querySelectorAll('[id^="faqContent-"]');
+            const icons = document.querySelectorAll('[id^="faqIcon-"]');
+
+            // SVG for Arrow Down (to open)
+            const arrowDownSVG = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                <path fill="white" d="M1.5 6.5l6 6 6-6" />
+            </svg>
+            `;
+
+            // SVG for Arrow Up (to close)
+            const arrowUpSVG = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                <path fill="white" d="M1.5 9.5l6-6 6 6" />
+            </svg>
+            `;
+
+            // Close all other accordions
+            contents.forEach((content, i) => {
+                if (i + 1 !== index) {
+                    content.style.maxHeight = "0";
+                    icons[i].innerHTML = arrowDownSVG;
+                }
+            });
+
+            // Toggle the clicked accordion
+            const content = document.getElementById(`faqContent-${index}`);
+            const icon = document.getElementById(`faqIcon-${index}`);
+
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                content.style.maxHeight = "0";
+                icon.innerHTML = arrowDownSVG;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.innerHTML = arrowUpSVG;
+            }
+        }
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                new Splide("#associations", {
+                    type   : 'loop',
+                    gap: '1rem',
+                    perPage: 5,
+                    arrows: false,
+                    focus  : 'start',
+                    autoplay: false,
+                    rewind     : true,
+                    rewindSpeed: 300,
+                    breakpoints: {
+                        1500 : { perPage: 5 },
+                        1300 : { perPage: 5 },
+                        1200 : { perPage: 4 },
+                        800  : { perPage: 3 },
+                        400  : { perPage: 1, pagination: true }
+                    },
+                }).mount();
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                new Splide("#testi", {
+                    type   : 'loop',
+                    perPage: 3,
+                    gap: "2rem",
+                    pagination: true,
+                    arrows: false,
+                    focus  : 'start',
+                    autoplay: false,
+                    rewind     : true,
+                    rewindSpeed: 300,
+                    breakpoints: {
+                        1500 : { perPage: 3, gap:"1rem" },
+                        1300 : { perPage: 3 },
+                        1200 : { perPage: 3 },
+                        800  : { perPage: 2 },
+                        400  : { perPage: 1,gap:"1rem", pagination: true }
+                    },
+                }).mount();
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                new Splide("#awards", {
+                    type   : 'loop',
+                    perPage: 5,
+                    gap: "2rem",
+                    arrows: false,
+                    focus  : 'start',
+                    autoplay: false,
+                    rewind     : true,
+                    rewindSpeed: 300,
+                    breakpoints: {
+                        1500 : { perPage: 5 },
+                        1300 : { perPage: 5 },
+                        1200 : { perPage: 4 },
+                        800  : { perPage: 3 },
+                        400  : { perPage: 1, pagination: true }
+                    },
+                }).mount();
+            });
+        </script>
+        
+  
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script>
+        document.getElementById('closeBanner').addEventListener('click', function () {
+            document.getElementById('banner').style.display = 'none';
+        });
+    </script>
+    
+</body>
+</html>
